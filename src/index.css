@@ -11,6 +11,11 @@ li {
   list-style-type: none;
 }
 
+button {
+  width:200px;
+  height:100px;
+  
+}
 
 /* HEADER */
 
@@ -161,7 +166,7 @@ article {
   width:258px;
   height:263px;
   border-radius: 5px;
-  background-color: blue;
+  border: black 2px solid;
 }
 
 /* ASIDE */
@@ -232,8 +237,60 @@ aside {
   font-size:20px;
 }
 
+.fa-exclamation-triangle {
+  margin:0 auto;
+  color:red;
+  width:240px;
+  
+}
+.error-message {
+  font-size: 48px;
+  width:60%;
+  height:400px;
+  margin:0 auto;
+  margin-top:20%;
+  color:red;
+  font-weight: 700;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+}
+ .error-message div:last-child{
+  margin:0 auto;
+ }
 
+ .loading {
+   font-size: 36px;
+   margin:0 auto;
+   color:lightgrey
+ }
+
+ #line-chart {
+   box-sizing: border-box;
+   background-color:red;
+   display:flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding-top:30px;
+  
+ }
+ .linechart-title {
+   margin-left:34px;
+   width:147px;
+   height:48px;
+   font-size: 15px;
+ }
+
+ .recharts-cartesian-axis-line, .recharts-cartesian-axis-tick-line {
+   stroke:rgba(255,0,0,0)
+ }
+
+ .recharts-text, .recharts-cartesian-axis-tick-value, .linechart-title{
+ color:#fbd4d4;
+ fill:#fbd4d4;
+ 
+ }
 
 @media screen and (max-width:1170px) {
   aside{
