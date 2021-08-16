@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 
 
-function Fetch(id,activity){
+function Fetch(id){
    
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -64,7 +64,7 @@ function Fetch(id,activity){
              }
             )
 
-      },[] )
+      },[id] )
       return { userdata, averageSessionsData,performanceData,activityData, isLoaded, error };
 }
 export default Fetch

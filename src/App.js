@@ -1,11 +1,12 @@
 import Hero from './componants/Hero';
 import Fetch from './service/fetch';
-import { useState, useEffect } from 'react'
 import {
     useParams
   } from "react-router-dom";
 import Linechart from './componants/Linechart';
-
+import Piechart from './componants/Piechart';
+import Radarchart from './componants/Radarchart';
+import Barchart from './componants/Barchart';
 
 
 function App (){
@@ -26,15 +27,13 @@ function App (){
                 <Hero name={userdata}/>
                 <main>
                     <article>
-                        <div className="dailyactivity"></div>
+                        <div className="dailyactivity">
+                        <Barchart data={activityData}/>
+                        </div>
                         <div className="card-div">
                             <Linechart data={averageSessionsData} />
-                            <div className="card">
-
-                            </div>
-                            <div className="card">
-
-                            </div>
+                            <Radarchart data={performanceData} />
+                            <Piechart data={userdata} />
                         </div>
                     </article>
 
@@ -44,7 +43,7 @@ function App (){
                                 <div id="calories"></div>
                             </div>
                             <div>
-                                <p className="nutriment-data">{userdata.keyData.calorieCount}</p>
+                                <p className="nutriment-data">{userdata.keyData.calorieCount}kCal</p>
                                 <p className="nutriment">Calories</p>
                             </div>
                         </div>
@@ -53,7 +52,7 @@ function App (){
                                 <div id="proteines"></div>
                             </div>
                             <div>
-                                <p className="nutriment-data">{userdata.keyData.proteinCount}</p>
+                                <p className="nutriment-data">{userdata.keyData.proteinCount}g</p>
                                 <p className="nutriment">Proteines</p>
                             </div>
                         </div>
@@ -62,7 +61,7 @@ function App (){
                                 <div id="glucides"></div>
                             </div>
                             <div>
-                                <p className="nutriment-data">{userdata.keyData.carbohydrateCount}</p>
+                                <p className="nutriment-data">{userdata.keyData.carbohydrateCount}g</p>
                                 <p className="nutriment">Glucides</p>
                             </div>
                         </div>
@@ -71,7 +70,7 @@ function App (){
                                 <div id="lipides"></div>
                             </div>
                             <div>
-                                <p className="nutriment-data">{userdata.keyData.lipidCount}</p>
+                                <p className="nutriment-data">{userdata.keyData.lipidCount}g</p>
                                 <p className="nutriment">Lipides</p>
                             </div>
                         </div>
