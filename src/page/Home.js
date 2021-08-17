@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function Home(){
+function Home(){// function to render a tempory page to switch between the 2 userId
     return (
         <div>
             <Link to={'/user/12'}><button>id 12</button></Link>

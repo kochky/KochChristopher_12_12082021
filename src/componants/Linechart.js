@@ -1,45 +1,56 @@
-import { LineChart, Line, XAxis, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
+import PropTypes from 'prop-types'
 
 
 
 
-function CustomTooltip({ payload, label, active }) {
-    if (active) {
-      return (
-        <div className="custom-tooltip">
-          <p className="label">{`${payload[0].value}`}</p>
-          
-         
-        </div>
-      );
-    }
-  
-    return null;
-  }
- 
-function Linechart(props){
-  
-    props.data.sessions[0].day = "L"
-    props.data.sessions[1].day = "M"
-    props.data.sessions[2].day = "M"
-    props.data.sessions[3].day = "J"
-    props.data.sessions[4].day = "V"
-    props.data.sessions[5].day = "S"
-    props.data.sessions[6].day = "D"
-
+function CustomTooltip({ payload, active }) {
+  if (active) {
     return (
-            <div id ="line-chart"className="card">
-                <div className="linechart-title">Durée moyenne des sessions</div>
-                <LineChart   margin={{top: 5, right: 10, bottom: 0, left: 10 }}width={258} height={178} data={props.data.sessions}>
-                    <Line type="monotone" dataKey="sessionLength" stroke="#ffb6b6" />
-                    <XAxis  dataKey="day"  />
-                    
-                    <Tooltip wrapperStyle={{ width: 40, height: 25,fontSize: 10, backgroundColor: '#FFF',display:'flex',justifyContent:'center',alignItems:'center' }} content={<CustomTooltip />}/>
-                </LineChart>
-            </div>
-
+      <div className="custom-tooltip">
+        <p className="label">{`${payload[0].value} min`}</p>
+        
       
-    )
+      </div>
+    );
+  }
+
+  return null;
+}
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+}
+ 
+function Linechart({data}){
+  data[0].day = "L"
+  data[1].day = "M"
+  data[2].day = "M"
+  data[3].day = "J"
+  data[4].day = "V"
+  data[5].day = "S"
+  data[6].day = "D"
+
+  return (
+          <div id ="line-chart"className="card">
+              <div className="linechart-title">Durée moyenne des sessions</div>
+              <LineChart  margin={{ top: 5, right: 5, bottom: 5, left: 5 }}width={258} height={263} data={data}>
+                  <Line type="monotone" dataKey="sessionLength" stroke="#ffb6b6" />
+                  <XAxis  dataKey="day"  />
+                  <YAxis  hide={true} type="number" domain={['dataMin', 'dataMax+15']} />
+                  
+                  <Tooltip cursor={{ stroke: 'rgba(236,61,61, 0.6)', strokeWidth: 50 }} wrapperStyle={{ width: 40, height: 25,fontSize: 10, backgroundColor: '#FFF',display:'flex',justifyContent:'center',alignItems:'center' }} content={<CustomTooltip />}/>
+              </LineChart>
+          </div>
+
+    
+  )
+}
+
+LineChart.propTypes = {
+  data: PropTypes.array
+
 }
 
 export default Linechart

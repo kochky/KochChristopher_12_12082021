@@ -1,8 +1,11 @@
 import { PieChart, Pie } from 'recharts';
+import PropTypes from 'prop-types'
+
 
 
 
 export default function Piechart(props) {
+
     var score;
     if (props.data.score){
          score = {score: props.data.score*100}
@@ -27,4 +30,9 @@ export default function Piechart(props) {
       </div>
     );
   
+
+}
+
+Piechart.propTypes = {
+    props: PropTypes.object,
 }

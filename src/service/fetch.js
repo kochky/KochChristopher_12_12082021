@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 
 
 
-function Fetch(id){
+function Fetch(id){// there are 4 url to fetch for the differents charts
    
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    
     const [userdata, setData] = useState([]);
     const [averageSessionsData, setAverageSessionsData] = useState([]);
     const [performanceData, setPerformanceData] = useState([]);
@@ -67,4 +69,9 @@ function Fetch(id){
       },[id] )
       return { userdata, averageSessionsData,performanceData,activityData, isLoaded, error };
 }
+
+Fetch.propTypes = {
+  id: PropTypes.string
+}
+
 export default Fetch

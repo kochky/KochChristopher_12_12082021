@@ -8,8 +8,10 @@ import {
 import './index.css';
 import Header from './componants/Header';
 import SideBar from './componants/SideBar';
-import App from './App';
-import Home from './Home'
+import App from './page/App';
+import Home from './page/Home'
+
+
 
 ReactDOM.render(
   <React.StrictMode>
