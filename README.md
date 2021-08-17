@@ -6,7 +6,7 @@
   NodeJS (version 12.18)
   npm
   
-## Installing and launching back-end
+## `Installing and launching back-end`
 
 Clone the repository of OpenClassrooms-Student-Center/P9-front-end-dashboard
 
