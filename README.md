@@ -5,11 +5,10 @@
 ## Prerequisites
 
 <br/>
-- NodeJS (version 12.18) <br/>
-- npm <br/><br/>
 
-- "NodeJS (version 12.18)"
-- "npm"
+
+- NodeJS (version 12.18)
+- npm
 
 
 
