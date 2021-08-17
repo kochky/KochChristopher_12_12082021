@@ -8,6 +8,8 @@
 - NodeJS (version 12.18) <br/>
 - npm <br/><br/>
 
+-
+
 
 
 ## Installing and launching back-end
@@ -15,30 +17,30 @@
 <br/>
 Clone the repository of OpenClassrooms-Student-Center/P9-front-end-dashboard
 ### `git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git`
-<br/>
+<br/><br/>
 
 
 Inside this back-end repository, install dependencies:
 ### `npm install`
 
-<br/>
+<br/><br/>
 
 Launch back-end on port 3000 (default port):
 ### `npm run start`
 
-<br/>
+<br/><br/>
 
 ## Installing and launching front-end
 
 Clone the repository of kochky/KochChristopher_12_12082021
 ### `git clone https://github.com/kochky/KochChristopher_12_12082021.git`
-<br/>
+<br/><br/>
 
 
 
 Inside this front-end repository, install dependencies:
 ### `npm install`
-<br/>
+<br/><br/>
 
 
 
