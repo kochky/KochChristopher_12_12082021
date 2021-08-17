@@ -6,7 +6,9 @@
 <br/>
 * NodeJS (version 12.18) 
 * npm <br/><br/>
-  
+
+-
+
 ## Installing and launching back-end
 
 <br/>
