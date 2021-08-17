@@ -4,10 +4,10 @@
 <br/>
 ## Prerequisites
 <br/>
-* NodeJS (version 12.18) 
-* npm <br/><br/>
+- NodeJS (version 12.18) 
+- npm <br/><br/>
 
--
+
 
 ## Installing and launching back-end
 
