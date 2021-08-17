@@ -3,8 +3,9 @@
 
 <br/>
 ## Prerequisites
+
 <br/>
-- NodeJS (version 12.18) 
+- NodeJS (version 12.18) <br/>
 - npm <br/><br/>
 
 
