@@ -1,10 +1,16 @@
-body {
+body, #root {
   font-family: 'Roboto', sans-serif;
   min-width:1024px;
   margin:0 auto;
   padding:0;
   font-weight: 500;
-  height:100vh;
+  position:relative;
+  height:auto;
+  min-height:100vh;
+}
+
+#root {
+  height:100%;
 }
 
 li {
@@ -22,14 +28,14 @@ button {
 header {
   background-color: black;
   color:white;
-  height:91px;
+  height:105px;
   width:100%;
   display:flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   padding:0 2%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
 
 }
 
@@ -38,11 +44,11 @@ header {
   background-size: cover;
   width:178px;
   height:60px;
-
 }
 
 .navbar{
   width:85%;
+  max-width: 1440px;
 
 }
 
@@ -65,13 +71,18 @@ header {
   background-color: black;
   width:117px;
   height:100vh;
+  min-height:1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   box-sizing: border-box;
-  padding:10% 0;
-  
+}
+.sidebar::after {
+  content: "";
+  display: block;
+  clear: both;
+  background-color: black;
 }
 
 
@@ -127,9 +138,11 @@ header {
 
 .container {
   max-width: 1440px;
+  width:100%;
   margin:0 auto;
   box-sizing: border-box;
-  padding:68px 50px 0 167px;
+  padding:68px 50px 0 225px;
+
 }
 
 /* MAIN */
@@ -137,7 +150,8 @@ header {
 main {
   display:flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  column-gap: 30px;
+  width:100%;
 }
 
 /* ARTICLE */
@@ -151,6 +165,8 @@ article {
 .dailyactivity {
   position:relative;
   height:320px;
+  width:100%;
+  min-width:785px;
   background-color: #fbfbfb;
   margin-bottom: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
@@ -163,26 +179,38 @@ article {
 
 .card-div {
   width:100%;
+  min-width:785px;
   height:320px;
   display:flex;
   justify-content: space-between;
-  column-gap:5px;
+  column-gap:1%;
+  box-sizing: border-box;
 }
 
 .card {
   width:258px;
+  min-width:258px;
   height:263px;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 
 }
 
+.recharts-wrapper {
+
+  width:100% !important
+}
+
+.label {
+  text-align: center;
+}
 /* ASIDE */
 
 aside {
   width:258px;
   display:flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .aside-card {
@@ -325,11 +353,13 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-top:30px;
+
   position: relative;
 }
 
 #score-title {
+  position:absolute;
+  top:20px;
   font-size: 15px;
   align-self: flex-start;
   margin-left:30px;
@@ -339,7 +369,7 @@ aside {
    font-size: 16px;
    position: absolute;
    color:#74798c;
-   top:37%;
+   top:20%;
    width:162px;
    height:162px;
    background-color: white;
@@ -358,9 +388,6 @@ aside {
    font-size: 26px;
    color:black;
  }
-
-
-
 
 
  /* RADARCHART */
@@ -384,6 +411,10 @@ aside {
    border-radius: 5px;
  }
 
+ .recharts-legend-wrapper{
+   width: 100% !important;
+ }
+
 .recharts-legend-wrapper ul{
   padding-right:50px;
 }
@@ -391,10 +422,11 @@ aside {
 .recharts-default-legend{
   display:flex;
   justify-content: flex-end;
+
 }
 
 .recharts-default-legend li{
-  margin-right:26px!important;
+  margin-right:50px!important;
 }
 
 .recharts-legend-item {
@@ -403,11 +435,28 @@ aside {
 
 .recharts-legend-item-text{
   color:#74798C!important
-
  }
 
 
-@media screen and (max-width:1170px) {
+/* HOME PAGE ID CHOICE */
+
+.id-div {
+  padding-top:150px;
+  padding-left:150px;
+}
+
+
+@media screen and (max-width:1328px) {
+
+  .container {
+    padding:68px 2% 0 180px;
+  }
+}
+
+
+
+@media screen and (max-width:1250px) {
+
   aside{
     flex-direction:row;
     justify-content: space-between;
@@ -424,10 +473,19 @@ aside {
   .aside-card {  
    padding:2%;
    min-width:195px;
+   margin-bottom:0;
   }
   
   article{
     width:100%;
   }
 
+  .hero p {
+    margin-bottom:20px;
+  }
 }
+
+svg {
+  width:100% !important
+}
+

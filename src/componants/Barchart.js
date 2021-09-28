@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,ResponsiveContainer } from 'recharts';
 import React from 'react';
 import PropTypes from 'prop-types'
 
@@ -19,17 +19,16 @@ function CustomTooltip2({ payload, label, active }) {
 }
 
 function Barchart({data}){
-   
-   
-    //props.data.sessions.map((item) =>( item.day=item.day.split('-')[2]  ));
-  
-   
+
+
+
+
     return  ( 
         <React.Fragment>
         <div className="activity-title">Activité quotidienne</div>
+        <ResponsiveContainer  minWidth={745} width='100%' height={290}>
         <BarChart
-          width={835}
-          height={300}
+         width='100%'
           data={data}
           margin={{
             top: 0,
@@ -45,11 +44,12 @@ function Barchart({data}){
           <XAxis dataKey="day" />
           <YAxis hide yAxisId="left" orientation="left" stroke="#8884d8" />
           <YAxis  yAxisId="right" orientation="right" stroke="#82ca9d" />
-          <Tooltip content={<CustomTooltip2 />}cursor={{ stroke: 'rgba(224,224,224,0.3)'}} contentStyle={{color:'white', backgroundColor:'red'}}wrapperStyle={{ width: 40, height: 63,fontSize: 10, color:'white', backgroundColor:'red'}}/>
-          <Legend   padding="1000" iconSize={8} iconType="circle"verticalAlign="top"  height={36} />
+          <Tooltip content={<CustomTooltip2 />}cursor={{ stroke: 'rgba(224,224,224,0.3)'}} contentStyle={{color:'white', backgroundColor:'red'}}wrapperStyle={{ width: 45, height: 63,fontSize: 10, color:'white', backgroundColor:'red'}}/>
+          <Legend   padding="1000" iconSize={8} iconType="circle"verticalAlign="top"  height={66} />
           <Bar name="Poids(kg)" yAxisId="right" dataKey="kilogram" radius={[3.5, 3.5, 0, 0]} fill="#282d30" />
           <Bar name="Calories brûlées (kCal)"yAxisId="left" dataKey="calories" radius={[3.5, 3.5, 0, 0]} fill="red" />
         </BarChart>
+        </ResponsiveContainer>
         </React.Fragment>
     )
 

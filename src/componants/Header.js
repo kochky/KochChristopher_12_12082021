@@ -14,6 +14,7 @@ function Header() {
                     <li>Communauté</li>
                 </ul>
             </div>
+            <div></div>
         </header>
     )
 

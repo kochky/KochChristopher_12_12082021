@@ -35,7 +35,7 @@ function Linechart({data}){
   return (
           <div id ="line-chart"className="card">
               <div className="linechart-title">Durée moyenne des sessions</div>
-              <LineChart  margin={{ top: 5, right: 5, bottom: 5, left: 5 }}width={258} height={263} data={data}>
+              <LineChart  margin={{ top: 5, right: 15, bottom: 5, left: 15 }}width={258} height={263} data={data}>
                   <Line type="monotone" dataKey="sessionLength" stroke="#ffb6b6" />
                   <XAxis  dataKey="day"  />
                   <YAxis  hide={true} type="number" domain={['dataMin', 'dataMax+15']} />
