@@ -1,4 +1,4 @@
-
+/** Component of the left sidebar */
 function SideBar() {
 
     return (
@@ -13,9 +13,6 @@ function SideBar() {
             <div className=" sidebar-div copyright">Copiryght, SportSee 2020</div>
 
         </div>
-
-
-
     )
 }
 export default SideBar

@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 
-
-
-function Fetch(id){// there are 4 url to fetch for the differents charts
+/** 
+ * Fetch the data of the 2 users. There are 4 url to fetch for the multiple charts and the hero section
+ * @param {string} id - The id in the url, it depends of the current user
+ */
+function Fetch(id){
    
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);

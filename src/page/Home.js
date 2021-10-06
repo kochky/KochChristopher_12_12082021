@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
 
-
-function Home(){// function to render a tempory page to switch between the 2 userId
+/**Component to render a temporary page to switch between the 2 userId.  */
+function Home(){
     return (
         <div className='id-div'>
             <Link to={'/user/12'}><button>id 12</button></Link>
@@ -10,6 +10,5 @@ function Home(){// function to render a tempory page to switch between the 2 use
         </div>
         )
 }
-
 
 export default Home

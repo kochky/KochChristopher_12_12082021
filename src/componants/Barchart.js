@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 
+/** Component for the linechart. It personnalises the tooltip */
 
 function CustomTooltip2({ payload, label, active }) {
   if (active) {
@@ -18,10 +19,11 @@ function CustomTooltip2({ payload, label, active }) {
   return null;
 }
 
+ 
+/** Barchart Component. The days are changed to fit in the chart.
+ * * @param {object} data - the fetched userdata
+ */
 function Barchart({data}){
-
-
-
 
     return  ( 
         <React.Fragment>
@@ -52,7 +54,6 @@ function Barchart({data}){
         </ResponsiveContainer>
         </React.Fragment>
     )
-
 }
 
 Barchart.propTypes = {

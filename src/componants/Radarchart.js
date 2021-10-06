@@ -1,23 +1,21 @@
+import React,{useEffect, useState} from 'react'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 import PropTypes from 'prop-types'
 
+/** Component of the radarchart. UseEffect change the data's kind number to string for better user experience 
+ * @param {object} data - the fetched userdata
+*/
 function Radarchart ({data}) {
 
+    const [load,setLoad]=useState(false)
+
+    useEffect(() => {
+        const dataTable=['Cardio','Energie','Endurance','Force','Vitesse','Intensité']
+        data.map((item)=>(item.kind=dataTable[item.kind -1] ))
+        setLoad(true)
+    }, [])
    
-  
-    data.map((item)=>(
-        
-        (item.kind===1) &&(item.kind="Cardio"),
-        (item.kind===2) && (item.kind="Energie"),
-        (item.kind===3) && (item.kind="Endurance"),
-        (item.kind===4) && (item.kind="Force"),
-        (item.kind===5) && (item.kind="Vitesse"),
-        (item.kind===6) && (item.kind="Intensité")
-
-    ));
-
-       
-    return (
+    return load && (
         <div id ="radarchart"className="card">
              <RadarChart cx="50%" cy="50%" outerRadius="70%" width={248} height={255} data={data} startAngle={30} endAngle={-330} >
                     <PolarGrid/>

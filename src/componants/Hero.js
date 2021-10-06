@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types'
 
+/**Hero component
+ * @param {string} name- User's name
+ */
 function Hero ({name}){
 
     return (
@@ -10,8 +13,6 @@ function Hero ({name}){
             <p>Félicitation ! Vous avez explosé vos objectifs hier  !&nbsp;👏</p>
         </div>
     )
-
-
 }
 
 Hero.propTypes = {

@@ -10,6 +10,7 @@ import Barchart from '../componants/Barchart';
 import AsideCard from '../componants/AsideCard';
 
 
+/** Component of the dashboard. It collect the id in the url page, and do a fetch. A loading page is displayed during the fetch. Throw error if needed */
 function App (){ // 
     const { id } = useParams();
    
@@ -49,7 +50,5 @@ function App (){ //
         )
     }
 }
-
-
 
 export default App

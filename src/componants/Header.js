@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 
-function Header() {
 
+/** Header Component with a navbar*/
+
+function Header() {
 
     return (
         <header className="header">
@@ -17,9 +19,6 @@ function Header() {
             <div></div>
         </header>
     )
-
-
-
 
 }
 export default Header

@@ -3,18 +3,15 @@ import PropTypes from 'prop-types'
 
 
 
-
+/** Component for the linechart. It personnalises the tooltip */
 function CustomTooltip({ payload, active }) {
   if (active) {
     return (
       <div className="custom-tooltip">
         <p className="label">{`${payload[0].value} min`}</p>
-        
-      
       </div>
     );
   }
-
   return null;
 }
 
@@ -23,6 +20,10 @@ CustomTooltip.propTypes = {
   payload: PropTypes.array,
 }
  
+/** LineChart Component. The days are changed to fit in the chart.
+ * * @param {object} data - the fetched userdata
+ */
+
 function Linechart({data}){
   data[0].day = "L"
   data[1].day = "M"
@@ -38,8 +39,7 @@ function Linechart({data}){
               <LineChart  margin={{ top: 5, right: 15, bottom: 5, left: 15 }}width={258} height={263} data={data}>
                   <Line type="monotone" dataKey="sessionLength" stroke="#ffb6b6" />
                   <XAxis  dataKey="day"  />
-                  <YAxis  hide={true} type="number" domain={['dataMin', 'dataMax+15']} />
-                  
+                  <YAxis  hide={true} type="number" domain={['dataMin', 'dataMax+15']} />                  
                   <Tooltip cursor={{ stroke: 'rgba(236,61,61, 0.6)', strokeWidth: 50 }} wrapperStyle={{ width: 40, height: 25,fontSize: 10, backgroundColor: '#FFF',display:'flex',justifyContent:'center',alignItems:'center' }} content={<CustomTooltip />}/>
               </LineChart>
           </div>
@@ -50,7 +50,6 @@ function Linechart({data}){
 
 LineChart.propTypes = {
   data: PropTypes.array
-
 }
 
 export default Linechart
