@@ -9,6 +9,7 @@ function Radarchart ({data}) {
 
     const [load,setLoad]=useState(false)
 
+    //it changes the different numbers of the sessions data to be explicit for the user
     useEffect(() => {
         const dataTable=['Cardio','Energie','Endurance','Force','Vitesse','Intensité']
         data.map((item)=>(item.kind=dataTable[item.kind -1] ))
