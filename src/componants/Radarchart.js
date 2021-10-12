@@ -14,7 +14,7 @@ function Radarchart ({data}) {
         const dataTable=['Cardio','Energie','Endurance','Force','Vitesse','Intensité']
         data.map((item)=>(item.kind=dataTable[item.kind -1] ))
         setLoad(true)
-    }, [])
+    },[data])
    
     return load && (
         <div id ="radarchart"className="card">

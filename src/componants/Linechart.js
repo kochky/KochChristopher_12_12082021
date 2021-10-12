@@ -34,7 +34,7 @@ function Linechart({data}){
     const dates=["L","M","M","J","V","S","D"]
     data.map((date)=>(date.day=dates[date.day-1]))
     setLoad(true)
-  }, [])
+  },[data])
 
   return loadLineChart &&(
           <div id ="line-chart"className="card">
