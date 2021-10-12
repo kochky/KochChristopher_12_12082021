@@ -19,11 +19,11 @@ ReactDOM.render(
       <Header />
       <SideBar />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
         <Route path="/user/:id">
           <App />
+        </Route>
+        <Route >
+          <Home />
         </Route>
       </Switch> 
     </Router>

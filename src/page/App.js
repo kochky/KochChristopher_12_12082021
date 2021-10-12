@@ -44,7 +44,7 @@ function App (){ //
                 </main>
             </div>
         )
-    }else if (userdata ||!activityData ||!averageSessionsData ||!performanceData ){
+    }else if (isLoaded &&(!userdata ||!activityData ||!averageSessionsData ||!performanceData )){
         return (<div className="error-message"><i class="fas fa-exclamation-triangle fa-5x"></i><div >L'utilisateur n'existe pas !</div></div>);
     }
 }
