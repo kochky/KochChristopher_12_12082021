@@ -16,15 +16,13 @@ function App (){ //
    
     const { userdata, averageSessionsData,performanceData, isLoaded,activityData, error } = Fetch(id)
 
-     if (error) {
+    if (error) {
         return (<div className="error-message"><i class="fas fa-exclamation-triangle fa-5x"></i><div >Veuillez réactualiser la page...</div></div>);
-      } else if (!isLoaded) {
+    } else if (!isLoaded) {
         return <div className="container"><div className="loading">Chargement...</div></div>;
-      }else if (isLoaded) {
-
+    }else if (isLoaded && (userdata ||activityData ||averageSessionsData ||performanceData )){
         return (
             <div className="container">
-               
                 <Hero name={userdata.userInfos.firstName}/>
                 <main>
                     <article>
@@ -37,17 +35,17 @@ function App (){ //
                             <Piechart data={userdata} />
                         </div>
                     </article>
-
                     <aside>
                         <AsideCard id={"calories"} data={userdata.keyData.calorieCount} nutriment={"Calories"} type={"kCal"}/>
                         <AsideCard id={"proteines"} data={userdata.keyData.proteinCount} nutriment={"Proteines"} type={"g"}/>
                         <AsideCard id={"glucides"} data={userdata.keyData.carbohydrateCount} nutriment={"Glucides"} type={"g"}/>
                         <AsideCard id={"lipides"} data={userdata.keyData.lipidCount} nutriment={"Lipides"} type={"g"}/>
-
                     </aside>
                 </main>
             </div>
         )
+    }else if (userdata ||!activityData ||!averageSessionsData ||!performanceData ){
+        return (<div className="error-message"><i class="fas fa-exclamation-triangle fa-5x"></i><div >L'utilisateur n'existe pas !</div></div>);
     }
 }
 
