@@ -1,3 +1,4 @@
+import React,{useEffect, useState} from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 import PropTypes from 'prop-types'
 
@@ -25,15 +26,16 @@ CustomTooltip.propTypes = {
  */
 
 function Linechart({data}){
-  data[0].day = "L"
-  data[1].day = "M"
-  data[2].day = "M"
-  data[3].day = "J"
-  data[4].day = "V"
-  data[5].day = "S"
-  data[6].day = "D"
+  
+  const [loadLineChart,setLoad]=useState(false)
 
-  return (
+  useEffect(() => {
+    const dates=["L","M","M","J","V","S","D"]
+    data.map((date)=>(date.day=dates[date.day-1]),console.log(data))
+    setLoad(true)
+  }, [])
+
+  return loadLineChart &&(
           <div id ="line-chart"className="card">
               <div className="linechart-title">Durée moyenne des sessions</div>
               <LineChart  margin={{ top: 5, right: 15, bottom: 5, left: 15 }}width={258} height={263} data={data}>

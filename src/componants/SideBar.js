@@ -11,7 +11,6 @@ function SideBar() {
                 <div className="icon" id="lift-icon"></div>
             </div>
             <div className=" sidebar-div copyright">Copiryght, SportSee 2020</div>
-
         </div>
     )
 }
