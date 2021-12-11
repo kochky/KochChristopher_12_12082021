@@ -1,5 +1,16 @@
 # Installation
 
+##Dependencies
+
+*React v17.0.1
+
+*recharts v2.0.9
+
+*react-router-dom v5.2.0
+
+*prop-types v15.7.2
+
+Recommended text editor: Visual Studio Code
 ## Prerequisites
 <br/>
 
